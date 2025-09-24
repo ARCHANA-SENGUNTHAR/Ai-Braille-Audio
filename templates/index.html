@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Braille Audio Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>AI Braille Audio Converter</h1>
+
+    <video id="video" width="400" height="300" autoplay></video><br>
+    <input type="number" id="ocrInterval" placeholder="Interval ms" value="2000">
+    <input type="number" id="voiceRate" placeholder="Voice Rate" value="150"><br>
+    <button onclick="startLiveOCR()">Start Live OCR</button>
+    <button onclick="stopLiveOCR()">Stop Live OCR</button><br><br>
+
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Upload Image</button><br><br>
+
+    <h2>Detected Text</h2>
+    <div id="textOutput"></div>
+
+    <h2>Braille</h2>
+    <div id="brailleOutput"></div>
+    <button onclick="downloadBraille()">Download Braille</button>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Braille Audio Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Braille Audio Converter</h1>
+
+        <div class="section">
+            <h2>Live Camera OCR</h2>
+            <video id="video" autoplay playsinline></video>
+            <div class="controls">
+                <button onclick="startLiveOCR()">Start Live OCR</button>
+                <button onclick="stopLiveOCR()">Stop Live OCR</button>
+                <label>Interval(ms): <input type="number" id="ocrInterval" value="3000"></label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Upload Image</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <button onclick="uploadImage()">Upload & Convert</button>
+        </div>
+
+        <div class="section output">
+            <h2>Extracted Text</h2>
+            <pre id="textOutput">[No text yet]</pre>
+            <h2>Braille</h2>
+            <pre id="brailleOutput">[No braille yet]</pre>
+            <button onclick="downloadBraille()">Download Braille</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
