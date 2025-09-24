@@ -1,0 +1,157 @@
+/* styles.css - mobile-first UI */
+:root{
+  --bg:#f1f5fb;
+  --card:#ffffff;
+  --accent:#6c63ff;
+  --muted:#6b7280;
+  --success:#10b981;
+  --danger:#ef4444;
+  --glass: rgba(255,255,255,0.85);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  background: linear-gradient(180deg,#eef2ff 0%, #f8fafc 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:0;
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  font-size:16px;
+}
+
+.app-root{
+  width:100%;
+  max-width:420px;
+  min-height:100vh;
+  background:transparent;
+  padding:12px 12px 40px;
+}
+
+/* top bar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-bottom:12px;
+}
+.logo {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.brand {
+  font-weight:700;
+  color:var(--accent);
+  font-size:18px;
+}
+.icon-circle{
+  width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,white,rgba(255,255,255,0.6));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(99,102,241,0.1)
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  border-radius:14px;
+  padding:14px;
+  box-shadow: 0 6px 22px rgba(15,23,42,0.06);
+  margin-bottom:12px;
+}
+
+/* big action button */
+.btn{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:12px 14px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(99,102,241,0.12);
+}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(99,102,241,0.12); box-shadow:none}
+
+/* center large camera button */
+.cam-wrap {display:flex;flex-direction:column;align-items:center;gap:10px}
+.cam-circle{
+  width:120px;height:120px;border-radius:999px;border:6px solid rgba(0,0,0,0.06);
+  background:linear-gradient(180deg,#fff,#f7f9ff);
+  display:flex;align-items:center;justify-content:center;font-size:46px;color:var(--accent);
+}
+.small{font-size:13px;color:var(--muted)}
+
+/* preview canvas */
+.preview-canvas{
+  width:100%;
+  border-radius:10px;
+  overflow:hidden;
+  background:#f7fafc;
+  border:1px solid #eef2ff;
+  height:300px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* results */
+.results-area{display:flex;flex-direction:column;gap:10px}
+textarea#extractedText{
+  width:100%;
+  min-height:110px;
+  border-radius:10px;
+  padding:10px;
+  border:1px solid #eef2ff;
+  resize:vertical;
+  font-size:15px;
+}
+.braille-box{
+  background: linear-gradient(180deg,#fbfdff,#ffffff);
+  border-radius:10px;
+  padding:12px;
+  border:1px dashed #e6eefc;
+  min-height:90px;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;
+  font-size:28px;
+}
+.braille-word {
+  background: #fff;
+  border-radius:8px;
+  padding:8px;
+  box-shadow:0 3px 10px rgba(2,6,23,0.04);
+  display:inline-flex;flex-direction:column;align-items:center;gap:6px;
+  min-width:84px;max-width:160px;text-align:center;cursor:pointer;
+}
+
+/* small UI */
+.row{display:flex;gap:8px;align-items:center}
+.small-muted{font-size:13px;color:var(--muted)}
+.switch{display:inline-flex;align-items:center;gap:8px}
+.switch input{width:18px;height:18px}
+
+/* footer nav */
+.bottom-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;width:100%;max-width:420px;padding:8px;display:flex;justify-content:space-around;gap:8px}
+.nav-btn{background:linear-gradient(180deg,#fff,#f9fbff);border-radius:12px;padding:10px 12px;border:1px solid #eef2ff;display:flex;align-items:center;gap:8px;cursor:pointer}
+.nav-btn.active{box-shadow:0 8px 18px rgba(99,102,241,0.08);border-color:rgba(99,102,241,0.12)}
+
+/* sign up/login */
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.input {padding:10px;border-radius:8px;border:1px solid #eef2ff}
+
+/* processing screen */
+.processing-screen{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;height:260px}
+.loader{width:84px;height:84px;border-radius:999px;border:6px solid #fff;border-top-color:var(--accent);animation:spin 1s linear infinite;box-shadow:0 6px 20px rgba(99,102,241,0.1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* help & settings lists */
+.list-item{padding:10px;border-radius:8px;background:#fff;border:1px solid #f1f5ff;margin-bottom:8px}
+
+/* responsive tweaks */
+@media(min-width:540px){
+  .app-root{margin-top:20px}
+  .preview-canvas{height:360px}
+}
