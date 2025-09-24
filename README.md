@@ -69,7 +69,7 @@ python app.py
 
 ## 🙌 Acknowledgements
 
-- Built and maintained by Deepika S and collaborator Archana Sengunthar
+- Built and maintained by Deepika S and collaborator Archana Gurusamy
 
 ---
 
