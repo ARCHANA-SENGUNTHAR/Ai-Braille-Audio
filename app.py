@@ -1,29 +1,38 @@
-import pytesseract
+import os
 import platform
+import pytesseract
+from flask import Flask, render_template, request, jsonify
+from PIL import Image
+from models.braille_map import text_to_braille
+import base64
+from io import BytesIO
+import threading
 
+IS_CLOUD = os.environ.get("RENDER") is not None
+
+# Tesseract path
 if platform.system() == "Windows":
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 else:
     pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
-from flask import Flask, render_template, request, jsonify
-from PIL import Image
-from models.braille_map import text_to_braille
-import pyttsx3
-import base64
-from io import BytesIO
-import threading
-
 app = Flask(__name__)
 
-# Initialize TTS engine
-tts_engine = pyttsx3.init()
-tts_engine.setProperty('rate', 150)
+# Initialize TTS only locally
+tts_engine = None
+if not IS_CLOUD:
+    import pyttsx3
+    tts_engine = pyttsx3.init()
+    tts_engine.setProperty('rate', 150)
 
 def speak(text):
+    if IS_CLOUD or not tts_engine:
+        return
+
     def run():
         tts_engine.say(text)
         tts_engine.runAndWait()
+
     threading.Thread(target=run).start()
 
 @app.route('/')
