@@ -1,12 +1,13 @@
-
 import pytesseract
+import platform
 
-# Update this path to where tesseract.exe is installed
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+else:
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 from flask import Flask, render_template, request, jsonify
 from PIL import Image
-import pytesseract
 from models.braille_map import text_to_braille
 import pyttsx3
 import base64
@@ -54,4 +55,4 @@ def capture():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
