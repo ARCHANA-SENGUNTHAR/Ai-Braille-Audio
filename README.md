@@ -20,6 +20,8 @@ It uses:
 This project is hackathon-ready with a clean UI, live OCR, and Braille output.
 
 ---
+## To check out Live Website : [Click here](https://ai-braille-audio.onrender.com/)
+---
 
 ## **Folder Structure**
 ai-braille-audio/
@@ -64,14 +66,6 @@ python app.py
 -Pytesseract (OCR)
 -PyTTSx3 (Text-to-Speech)
 -HTML / CSS / JavaScript
-
----
-##See The Output here:
-[https://ai-braille-audio.onrender.com/]
-
-## 🙌 Acknowledgements
-
-- Built and maintained by Deepika S and collaborator Archana Gurusamy
 
 ---
 
