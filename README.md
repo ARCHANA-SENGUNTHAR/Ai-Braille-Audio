@@ -43,10 +43,8 @@ ai-braille-audio/
 
 1. **Install Tesseract OCR**
 
-   ```bash
-   -[Download Tesseract](https://github.com/tesseract-ocr/tesseract)  for Windows/macOS/Linux.
-   -Add Tesseract to your system PATH.
-   ```
+   - [Download Tesseract](https://github.com/tesseract-ocr/tesseract) for Windows/macOS/Linux.
+   - Add Tesseract to your system PATH.
 
 3. **Clone this repository**
    
