@@ -5,6 +5,7 @@ Convert text from images into **Braille** and **audio** in real-time using OCR a
 ---
 
 ## **About the Project**
+
 AI Braille Audio Converter is a Python-based web app that allows users to:
 - Extract text from images via **upload** or **live camera feed**.
 - Convert the extracted text into **Braille**.
@@ -22,7 +23,7 @@ This project is hackathon-ready with a clean UI, live OCR, and Braille output.
 ---
 ## To check out Live Website : [Click here](https://ai-braille-audio.onrender.com/)
 ---
-
+```bash
 ## **Folder Structure**
 ai-braille-audio/
 ├─ app.py
@@ -36,29 +37,36 @@ ai-braille-audio/
 │ │ └─ style.css
 │ └─ js/
 │ └─ main.js
-
+```
 ---
 ## **Setup & Installation**
 
 1. **Install Tesseract OCR**
+
+   ```bash
    - [Download Tesseract](https://github.com/tesseract-ocr/tesseract) for Windows/macOS/Linux.
    - Add Tesseract to your system PATH.
+   ```
 
-2. **Clone this repository**
-```bash
-git clone <repository-url>
-cd ai-braille-audio
-```
+3. **Clone this repository**
+   
+   ```bash
+   git clone <repository-url>
+   cd ai-braille-audio
+   ```
 
 3. **Install Python dependencies**
-```bash
-pip install -r requirements.txt
-```
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Run the app**
-```bash
-python app.py
-```
+
+   ```bash
+   python app.py
+   ```
+   
 ---
 ## Technologies Used
 
