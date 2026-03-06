@@ -1,6 +1,6 @@
 # AI Braille Audio Converter
 
-Convert text from images into **Braille** and **audio** in real-time using OCR and TTS.
+Converting text from images into **Braille** and **audio** in real-time using OCR and TTS.
 
 ---
 
